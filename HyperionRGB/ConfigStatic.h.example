@@ -7,6 +7,20 @@
 //#define CONFIG_OVERWRITE_WEBCONFIG 1
 
 /*------------------------------------------------*/
+/*Pinout constats for DOIT ESP32 Dev v1*/
+static const uint8_t D0   = 16;
+static const uint8_t D1   = 5;
+static const uint8_t D2   = 4;
+static const uint8_t D3   = 0;
+static const uint8_t D4   = 2;
+static const uint8_t D5   = 14;
+static const uint8_t D6   = 12;
+static const uint8_t D7   = 13;
+static const uint8_t D8   = 15;
+//static const uint8_t RX   = 3;
+//static const uint8_t TX   = 1;
+
+/*------------------------------------------------*/
 /*Logging level*/
 
 #define LOGLEVEL LOG_LEVEL_INFOS
@@ -22,22 +36,22 @@
 //#define FASTLED_ALLOW_INTERRUPTS 0 //Comment in if clockless stripe (ex. WS2812B) is flickering
 //#define CONFIG_LED_PWM 1 //Comment in if PWM Stripe
 
-#define CONFIG_LED_DATAPIN D1 //Comment out for PWM
-#define CONFIG_LED_CLOCKPIN D2 //Comment out for clockless / PWM
+#define CONFIG_LED_DATAPIN D2 //Comment out for PWM                 // CK-Here
+#define CONFIG_LED_CLOCKPIN D4 //Comment out for clockless / PWM    // SI here
 //#define CONFIG_LED_PWM_RED D1 //Comment in for PWM
 //#define CONFIG_LED_PWM_GREEN D2 //Comment in for PWM
 //#define CONFIG_LED_PWM_BLUE D3 //Comment in for PWM
 
 //Pin order, see FastLED doc. NodeMCU should work with FASTLED_ESP8266_RAW_PIN_ORDER
-#define FASTLED_ESP8266_RAW_PIN_ORDER
+#define FASTLED_ESP32_RAW_PIN_ORDER
 //#define FASTLED_ESP8266_NODEMCU_PIN_ORDER
 //#define FASTLED_ESP8266_D1_PIN_ORDER
 
-#define CONFIG_LED_COLOR_ORDER RGB
-#define CONFIG_LED_COUNT 50
+#define CONFIG_LED_COLOR_ORDER RBG
+#define CONFIG_LED_COUNT 34
 
 //OFF, HYPERION_UDP, STATIC_COLOR, RAINBOW, FIRE2012
-#define CONFIG_LED_STANDARD_MODE FIRE2012
+#define CONFIG_LED_STANDARD_MODE RAINBOW
 #define CONFIG_LED_HYPERION_AUTOSWITCH true 
 #define CONFIG_LED_STANDARD_MODE_TIMEOUT_MS 5000 
 
@@ -52,7 +66,7 @@
 //const byte CONFIG_WIFI_SUBNET[] = {255, 255, 255, 0};
 //const byte CONFIG_WIFI_DNS[] = {192, 168, 0, 1};
 
-#define CONFIG_WIFI_HOSTNAME "ESP8266"
+#define CONFIG_WIFI_HOSTNAME "ESP32"
 
 #define CONFIG_PORT_JSON_SERVER 19444
 #define CONFIG_PORT_UDP_LED 19446
